@@ -14,7 +14,8 @@
           "title": "Wood",
           "description": "Choose a texture for wood.",
           "type": "multi-selection",
-          "preview": "assets/wood.png"
+          "preview": "assets/wood.png",
+          "options": ["Option 1", "Option 2"]
         }
       ]
     },
