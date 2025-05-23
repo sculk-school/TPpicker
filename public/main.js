@@ -9,8 +9,32 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleButton.className = 'sidebar-toggle';
   document.body.appendChild(toggleButton);
 
+  // Create export button
+  const exportButton = document.createElement('button');
+  exportButton.textContent = '&';
+  exportButton.className = 'export-button';
+  document.body.appendChild(exportButton);
+
+  // Create GitHub button
+  const githubButton = document.createElement('button');
+  githubButton.textContent = 'G';
+  githubButton.className = 'github-button';
+  githubButton.addEventListener('click', () => {
+    window.open('https://github.com/sculk-school/TPpicker', '_blank');
+  });
+  document.body.appendChild(githubButton);
+
+  // Position buttons
+  toggleButton.style.left = '10px';
+  exportButton.style.left = '60px';
+  githubButton.style.left = '110px';
+
   toggleButton.addEventListener('click', () => {
     sidebar.classList.toggle('hidden');
+  });
+
+  exportButton.addEventListener('click', () => {
+    alert('Export functionality coming soon!');
   });
 
   // Load widgets from widgets.json

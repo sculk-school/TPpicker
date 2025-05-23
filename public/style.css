@@ -22,7 +22,7 @@ header {
   width: 200px;
   padding: 1rem;
   position: fixed;
-  top: 50px; /* Leave space for the "=" button */
+  top: 50px; /* Leave space for the "=", "&", and "G" buttons */
   height: calc(100% - 50px); /* Adjust height to account for the space */
   z-index: 1000;
   overflow-y: auto;
@@ -33,21 +33,32 @@ header {
   transform: translateX(-220px);
 }
 
-.sidebar-toggle {
+.sidebar-toggle, .export-button, .github-button {
   position: fixed;
   top: 10px;
-  left: 10px;
   background-color: #333;
   color: #fff;
   border: none;
   padding: 10px 15px;
   border-radius: 4px;
   cursor: pointer;
-  z-index: 1100; /* Ensure it appears above the sidebar */
+  z-index: 1000;
 }
 
-.sidebar-toggle:hover {
+.sidebar-toggle:hover, .export-button:hover, .github-button:hover {
   background-color: #444;
+}
+
+.sidebar-toggle {
+  left: 10px;
+}
+
+.export-button {
+  left: 60px;
+}
+
+.github-button {
+  left: 110px;
 }
 
 .grid-container {
