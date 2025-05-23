@@ -72,17 +72,15 @@ header {
   border: 2px solid transparent;
   border-radius: 8px;
   cursor: pointer;
-  text-align: left;
-  transition: background-color 0.3s, border-color 0.3s;
+  transition: border-color 0.3s, background-color 0.3s;
 }
 
 .sidebar button:hover {
   background-color: #3a3a3a;
-  border-color: #FFD700;
 }
 
 .sidebar button.selected {
-  border-color: #FFD700;
+  border: 2px solid #FFD700;
 }
 
 .grid-container {
