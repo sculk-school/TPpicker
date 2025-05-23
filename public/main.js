@@ -2,29 +2,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const categoryList = document.getElementById('category-list');
   const gridContainer = document.querySelector('.grid-container');
   const sidebar = document.querySelector('.sidebar');
-  const toggleButton = document.createElement('button');
 
-  // Create toggle button
+  const toggleButton = document.createElement('button');
   toggleButton.textContent = '=';
   toggleButton.className = 'sidebar-toggle';
   document.body.appendChild(toggleButton);
 
-  // Create export button
   const exportButton = document.createElement('button');
   exportButton.textContent = '&';
   exportButton.className = 'export-button';
   document.body.appendChild(exportButton);
 
-  // Create GitHub button
   const githubButton = document.createElement('button');
   githubButton.textContent = 'G';
   githubButton.className = 'github-button';
   githubButton.addEventListener('click', () => {
-    window.open('https://github.com/sculk-school/TPpicker', '_blank');
+    window.open('https://github.com/sculk3/TPpicker', '_blank');
   });
   document.body.appendChild(githubButton);
 
-  // Position buttons
   toggleButton.style.left = '10px';
   exportButton.style.left = '60px';
   githubButton.style.left = '110px';
@@ -37,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     alert('Export functionality coming soon!');
   });
 
-  // Load widgets from widgets.json
   fetch('widgets.json')
     .then(response => response.json())
     .then(data => {
@@ -60,12 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
           <img src="${widget.preview || 'assets/placeholder.png'}" alt="Preview" class="preview-image">
         </div>
         <div class="widget-options">
-          ${widget.type === 'color-picker' ? '<input type="color" class="widget-color-picker" title="Pick a color">' : '<button class="widget-button">?</button><button class="widget-button">?</button>'}
+          ${widget.type === 'color-picker' ? '<input type="color" class="widget-color-picker" title="Pick a color">' : widget.options.map(option => `<button class="widget-button">${option}</button>`).join('')}
         </div>
       `;
       gridContainer.appendChild(widgetDiv);
 
-      // Add selection functionality for buttons
       const buttons = widgetDiv.querySelectorAll('.widget-button');
       buttons.forEach(button => {
         button.addEventListener('click', () => {
@@ -75,8 +69,4 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
-  document.getElementById('export-pack').addEventListener('click', () => {
-    alert('Export functionality coming soon!');
-  });
 });

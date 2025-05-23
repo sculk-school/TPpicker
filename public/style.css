@@ -7,6 +7,8 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
+  background-size: 15px 15px;
 }
 
 header {
@@ -17,13 +19,13 @@ header {
 }
 
 .sidebar {
-  background-color: #1f1f1f;
+  background-color: #1a1a1a;
   color: #e0e0e0;
   width: 200px;
   padding: 1rem;
   position: fixed;
-  top: 50px; /* Leave space for the "=", "&", and "G" buttons */
-  height: calc(100% - 50px); /* Adjust height to account for the space */
+  top: 50px;
+  height: calc(100% - 50px);
   z-index: 1000;
   overflow-y: auto;
   transition: transform 0.3s ease;
@@ -59,6 +61,28 @@ header {
 
 .github-button {
   left: 110px;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.sidebar button:hover {
+  background-color: #3a3a3a;
+  border-color: #FFD700;
+}
+
+.sidebar button.selected {
+  border-color: #FFD700;
 }
 
 .grid-container {
