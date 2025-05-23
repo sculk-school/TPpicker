@@ -1,14 +1,12 @@
 body {
+  background-color: #121212;
+  color: #e0e0e0;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #121212;
-  color: #e0e0e0;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 10px 10px;
 }
 
 header {
@@ -19,41 +17,100 @@ header {
 }
 
 .sidebar {
-  width: 200px;
   background-color: #1f1f1f;
   color: #e0e0e0;
+  width: 200px;
   padding: 1rem;
   position: fixed;
-  height: 100%;
+  top: 50px; /* Leave space for the "=" button */
+  height: calc(100% - 50px); /* Adjust height to account for the space */
+  z-index: 1000;
   overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+.sidebar.hidden {
+  transform: translateX(-220px);
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1100; /* Ensure it appears above the sidebar */
+}
+
+.sidebar-toggle:hover {
+  background-color: #444;
 }
 
 .grid-container {
   margin-left: 220px;
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
 }
 
 .widget {
-  background: #2a2a2a;
-  color: #e0e0e0;
+  background: #1a1a1a;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-button {
-  background-color: #3a3a3a;
-  color: #e0e0e0;
-  border: none;
-  padding: 0.5rem 1rem;
+.widget-title {
+  position: relative;
+  cursor: help;
+}
+
+.widget-title:hover::after {
+  content: attr(title);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
   border-radius: 4px;
-  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
-button:hover {
-  background-color: #505050;
+.widget-options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.widget-button {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.widget-button:hover {
+  background-color: #3a3a3a;
+}
+
+.widget-button.selected {
+  border-color: #FFD700;
 }

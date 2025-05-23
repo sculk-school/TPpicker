@@ -6,12 +6,14 @@
         {
           "title": "Stone",
           "description": "Choose a texture for stone.",
-          "type": "multi-selection"
+          "type": "multi-selection",
+          "preview": "assets/stone.png"
         },
         {
           "title": "Wood",
           "description": "Choose a texture for wood.",
-          "type": "multi-selection"
+          "type": "multi-selection",
+          "preview": "assets/wood.png"
         }
       ]
     },
@@ -21,7 +23,8 @@
         {
           "title": "Background Color",
           "description": "Pick a background color.",
-          "type": "color-picker"
+          "type": "color-picker",
+          "preview": "assets/color-preview.png"
         }
       ]
     }
