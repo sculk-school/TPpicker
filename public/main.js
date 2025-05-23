@@ -3,47 +3,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const gridContainer = document.querySelector('.grid-container');
   const sidebar = document.querySelector('.sidebar');
 
+  // Sidebar toggle button
   const toggleButton = document.createElement('button');
   toggleButton.textContent = '=';
   toggleButton.className = 'sidebar-toggle';
   document.body.appendChild(toggleButton);
 
-  const exportButton = document.createElement('button');
-  exportButton.textContent = '&';
-  exportButton.className = 'export-button';
-  document.body.appendChild(exportButton);
-
-  const githubButton = document.createElement('button');
-  githubButton.textContent = 'G';
-  githubButton.className = 'github-button';
-  githubButton.addEventListener('click', () => {
-    window.open('https://github.com/sculk3/TPpicker', '_blank');
-  });
-  document.body.appendChild(githubButton);
-
-  toggleButton.style.left = '10px';
-  exportButton.style.left = '60px';
-  githubButton.style.left = '110px';
-
   toggleButton.addEventListener('click', () => {
     sidebar.classList.toggle('hidden');
   });
 
-  exportButton.addEventListener('click', () => {
-    alert('Export functionality coming soon!');
-  });
-
+  // Fetch categories and widgets
   fetch('widgets.json')
     .then(response => response.json())
     .then(data => {
+      // Generate sidebar buttons for each category
       data.categories.forEach(category => {
-        const li = document.createElement('li');
-        li.textContent = category.name;
-        li.addEventListener('click', () => loadWidgets(category.widgets));
-        categoryList.appendChild(li);
+        const button = document.createElement('button');
+        button.textContent = category.name;
+        button.className = 'widget-button'; // Use the same style as widget buttons
+        button.addEventListener('click', () => loadWidgets(category.widgets));
+        categoryList.appendChild(button);
       });
     });
 
+  // Load widgets into the grid
   function loadWidgets(widgets) {
     gridContainer.innerHTML = '';
     widgets.forEach(widget => {
@@ -55,11 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
           <img src="${widget.preview || 'assets/placeholder.png'}" alt="Preview" class="preview-image">
         </div>
         <div class="widget-options">
-          ${widget.type === 'color-picker' ? '<input type="color" class="widget-color-picker" title="Pick a color">' : widget.options.map(option => `<button class="widget-button">${option}</button>`).join('')}
+          ${
+            widget.type === 'color-picker'
+              ? '<input type="color" class="widget-color-picker" title="Pick a color">'
+              : widget.options.map(option => `<button class="widget-button">${option}</button>`).join('')
+          }
         </div>
       `;
       gridContainer.appendChild(widgetDiv);
 
+      // Add selection behavior to widget buttons
       const buttons = widgetDiv.querySelectorAll('.widget-button');
       buttons.forEach(button => {
         button.addEventListener('click', () => {
