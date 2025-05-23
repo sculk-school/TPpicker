@@ -8,7 +8,7 @@
           "description": "Choose a texture for stone.",
           "type": "multi-selection",
           "preview": "assets/stone.png",
-          "options": ["Option 1", "Option 2"]
+          "options": ["Option 1", "Option 2", "Option 3"]
         },
         {
           "title": "Wood",
