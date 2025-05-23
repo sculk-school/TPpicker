@@ -1,0 +1,29 @@
+{
+  "categories": [
+    {
+      "name": "Blocks",
+      "widgets": [
+        {
+          "title": "Stone",
+          "description": "Choose a texture for stone.",
+          "type": "multi-selection"
+        },
+        {
+          "title": "Wood",
+          "description": "Choose a texture for wood.",
+          "type": "multi-selection"
+        }
+      ]
+    },
+    {
+      "name": "Colors",
+      "widgets": [
+        {
+          "title": "Background Color",
+          "description": "Pick a background color.",
+          "type": "color-picker"
+        }
+      ]
+    }
+  ]
+}
