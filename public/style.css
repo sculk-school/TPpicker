@@ -1,4 +1,5 @@
 body {
+  /* General styles for the body, including background and font settings */
   background-color: #121212;
   color: #e0e0e0;
   font-family: Arial, sans-serif;
@@ -12,6 +13,7 @@ body {
 }
 
 header {
+  /* Styles for the header section */
   background-color: #1f1f1f;
   color: #e0e0e0;
   padding: 1rem;
@@ -19,6 +21,7 @@ header {
 }
 
 .sidebar {
+  /* Styles for the sidebar container */
   background-color: #1a1a1a;
   color: #e0e0e0;
   width: 200px;
@@ -32,10 +35,12 @@ header {
 }
 
 .sidebar.hidden {
+  /* Styles for the hidden state of the sidebar */
   transform: translateX(-220px);
 }
 
 .sidebar-toggle, .export-button, .github-button {
+  /* General styles for buttons outside the sidebar */
   position: fixed;
   top: 10px;
   background-color: #333;
@@ -48,23 +53,29 @@ header {
 }
 
 .sidebar-toggle:hover, .export-button:hover, .github-button:hover {
+  /* Hover effect for buttons */
   background-color: #444;
 }
 
 .sidebar-toggle {
+  /* Positioning for the sidebar toggle button */
   left: 10px;
 }
 
 .export-button {
+  /* Positioning for the export button */
   left: 60px;
 }
 
 .github-button {
+  /* Positioning for the GitHub button */
   left: 110px;
 }
+
 .sidebar button {
+  /* Styles for buttons inside the sidebar */
   width: 100%;
-  padding: 2cm 0; /* riduce il padding verticale da 6px a 4px */
+  padding: 4px 0; /* Reduced vertical padding */
   margin: 10px 0;
   background-color: #2a2a2a;
   color: #e0e0e0;
@@ -72,35 +83,34 @@ header {
   border-radius: 8px;
   cursor: pointer;
   transition: border-color 0.3s, background-color 0.3s;
-  font-size: 1rem; /* Puoi ridurre anche la dimensione del font se vuoi */
-  /* annullo il min-height di default del browser */
-  min-height: 0;        
-  /* altezza e line-height identici per centrare il testo */
-  height: 40px;         
-  line-height: 40px;    
-  /* padding solo orizzontale */
-  padding: 0 8px;       
-  /* assicurati di usare box-sizing border-box se hai bordi */
-  box-sizing: border-box;
+  min-height: 0; /* Remove default min-height */
+  height: 40px; /* Set button height */
+  line-height: 40px; /* Center text vertically */
+  padding: 0 8px; /* Horizontal padding */
+  box-sizing: border-box; /* Ensure padding and border are included in width/height */
 }
 
 .sidebar button:hover {
+  /* Hover effect for sidebar buttons */
   background-color: #3a3a3a;
 }
 
 .sidebar button.selected {
+  /* Styles for selected buttons */
   border: 2px solid #FFD700;
 }
 
 .grid-container {
+  /* Styles for the grid container */
   margin-left: 240px;
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ensure widgets do not overlap */
-  gap: 50px; /* Modificato da 20px a 30px */
+  gap: 30px; /* Space between widgets */
 }
 
 .widget {
+  /* Styles for individual widgets */
   background: #1a1a1a;
   border-radius: 8px;
   padding: 1rem;
@@ -112,11 +122,13 @@ header {
 }
 
 .widget-title {
+  /* Styles for widget titles */
   position: relative;
   cursor: help;
 }
 
 .widget-title:hover::after {
+  /* Tooltip styles for widget titles */
   content: attr(title);
   position: absolute;
   top: 100%;
@@ -132,6 +144,7 @@ header {
 }
 
 .widget-options {
+  /* Styles for widget options grid */
   display: grid;
   grid-template-columns: repeat(2, 100px); /* 2 squares per row */
   gap: 10px;
@@ -140,6 +153,7 @@ header {
 }
 
 .widget-button {
+  /* Styles for widget buttons */
   width: 100px;
   height: 100px;
   display: flex;
@@ -154,9 +168,11 @@ header {
 }
 
 .widget-button:hover {
+  /* Hover effect for widget buttons */
   background-color: #3a3a3a;
 }
 
 .widget-button.selected {
+  /* Styles for selected widget buttons */
   border-color: #FFD700;
 }
