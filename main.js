@@ -1,32 +1,35 @@
+// Questo file contiene la logica principale dell'applicazione
+// Aggiunta di un listener per il caricamento del contenuto DOM
 document.addEventListener('DOMContentLoaded', () => {
   const categoryList = document.getElementById('category-list');
   const gridContainer = document.querySelector('.grid-container');
   const sidebar = document.querySelector('.sidebar');
 
-  // Sidebar toggle button
+  // Creazione del pulsante per mostrare/nascondere la sidebar
   const toggleButton = document.createElement('button');
   toggleButton.textContent = '=';
   toggleButton.className = 'sidebar-toggle';
   document.body.appendChild(toggleButton);
 
   toggleButton.addEventListener('click', () => {
+    // Mostra o nasconde la sidebar
     sidebar.classList.toggle('hidden');
   });
 
-  // Fetch categories and widgets
+  // Caricamento delle categorie e dei widget dal file JSON
   fetch('widgets.json')
     .then(response => response.json())
     .then(data => {
-      // Generate sidebar buttons for each category
+      // Genera i pulsanti della sidebar per ogni categoria
       data.categories.forEach(category => {
         const button = document.createElement('button');
         button.textContent = category.name;
-        button.className = 'widget-button'; // Use the same style as widget buttons
+        button.className = 'widget-button'; // Usa lo stesso stile dei pulsanti dei widget
         button.addEventListener('click', () => loadWidgets(category.widgets));
         categoryList.appendChild(button);
       });
 
-      // Load widgets into the grid
+      // Funzione per caricare i widget nella griglia
       function loadWidgets(widgets) {
         gridContainer.innerHTML = '';
         widgets.forEach(widget => {
@@ -47,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
           `;
           gridContainer.appendChild(widgetDiv);
 
-          // Add selection behavior to widget buttons
+          // Aggiunge il comportamento di selezione ai pulsanti dei widget
           const buttons = widgetDiv.querySelectorAll('.widget-button');
           buttons.forEach(button => {
             button.addEventListener('click', () => {
@@ -58,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
-      // Add selection behavior to sidebar category buttons
+      // Aggiunge il comportamento di selezione ai pulsanti delle categorie nella sidebar
       const categoryButtons = categoryList.querySelectorAll('.widget-button');
       categoryButtons.forEach(catBtn => {
         catBtn.addEventListener('click', () => {
@@ -67,5 +70,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     })
-    .catch(error => console.error('Error loading widgets:', error));
+    .catch(error => console.error('Errore nel caricamento dei widget:', error));
 });

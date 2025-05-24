@@ -1,5 +1,6 @@
+/* Stile generale per il corpo della pagina */
 body {
-  /* General styles for the body, including background and font settings */
+  /* Colore di sfondo e impostazioni generali del font */
   background-color: #121212;
   color: #e0e0e0;
   font-family: Arial, sans-serif;
@@ -12,16 +13,16 @@ body {
   background-size: 15px 15px;
 }
 
+/* Stile per l'intestazione */
 header {
-  /* Styles for the header section */
   background-color: #1f1f1f;
   color: #e0e0e0;
   padding: 1rem;
   text-align: center;
 }
 
+/* Stile per la sidebar */
 .sidebar {
-  /* Styles for the sidebar container */
   background-color: #1a1a1a;
   color: #e0e0e0;
   width: 200px;
@@ -34,13 +35,13 @@ header {
   transition: transform 0.3s ease;
 }
 
+/* Stile per la sidebar nascosta */
 .sidebar.hidden {
-  /* Styles for the hidden state of the sidebar */
   transform: translateX(-220px);
 }
 
+/* Stile per i pulsanti generali */
 .sidebar-toggle, .export-button, .github-button {
-  /* General styles for buttons outside the sidebar */
   position: fixed;
   top: 10px;
   background-color: #333;
@@ -52,30 +53,30 @@ header {
   z-index: 1000;
 }
 
+/* Effetto hover per i pulsanti */
 .sidebar-toggle:hover, .export-button:hover, .github-button:hover {
-  /* Hover effect for buttons */
   background-color: #444;
 }
 
+/* Posizionamento del pulsante per la sidebar */
 .sidebar-toggle {
-  /* Positioning for the sidebar toggle button */
   left: 10px;
 }
 
+/* Posizionamento del pulsante di esportazione */
 .export-button {
-  /* Positioning for the export button */
   left: 60px;
 }
 
+/* Posizionamento del pulsante GitHub */
 .github-button {
-  /* Positioning for the GitHub button */
   left: 110px;
 }
 
+/* Stile per i pulsanti nella sidebar */
 .sidebar button {
-  /* Styles for buttons inside the sidebar */
   width: 100%;
-  padding: 4px 0; /* Reduced vertical padding */
+  padding: 4px 0;
   margin: 10px 0;
   background-color: #2a2a2a;
   color: #e0e0e0;
@@ -83,52 +84,51 @@ header {
   border-radius: 8px;
   cursor: pointer;
   transition: border-color 0.3s, background-color 0.3s;
-  min-height: 0; /* Remove default min-height */
-  height: 40px; /* Set button height */
-  line-height: 40px; /* Center text vertically */
-  padding: 0 8px; /* Horizontal padding */
-  box-sizing: border-box; /* Ensure padding and border are included in width/height */
+  height: 40px;
+  line-height: 40px;
+  padding: 0 8px;
+  box-sizing: border-box;
 }
 
+/* Effetto hover per i pulsanti della sidebar */
 .sidebar button:hover {
-  /* Hover effect for sidebar buttons */
   background-color: #3a3a3a;
 }
 
+/* Stile per i pulsanti selezionati */
 .sidebar button.selected {
-  /* Styles for selected buttons */
   border: 2px solid #FFD700;
 }
 
+/* Stile per il contenitore della griglia */
 .grid-container {
-  /* Styles for the grid container */
   margin-left: 240px;
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ensure widgets do not overlap */
-  gap: 30px; /* Space between widgets */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
 }
 
+/* Stile per i widget */
 .widget {
-  /* Styles for individual widgets */
   background: #1a1a1a;
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   display: inline-block;
-  width: fit-content; /* Adjust width to fit content */
-  height: fit-content; /* Adjust height to fit content */
+  width: fit-content;
+  height: fit-content;
 }
 
+/* Stile per i titoli dei widget */
 .widget-title {
-  /* Styles for widget titles */
   position: relative;
   cursor: help;
 }
 
+/* Tooltip per i titoli dei widget */
 .widget-title:hover::after {
-  /* Tooltip styles for widget titles */
   content: attr(title);
   position: absolute;
   top: 100%;
@@ -143,17 +143,17 @@ header {
   z-index: 10;
 }
 
+/* Stile per le opzioni dei widget */
 .widget-options {
-  /* Styles for widget options grid */
   display: grid;
-  grid-template-columns: repeat(2, 100px); /* 2 squares per row */
+  grid-template-columns: repeat(2, 100px);
   gap: 10px;
   justify-content: center;
   margin-top: 10px;
 }
 
+/* Stile per i pulsanti dei widget */
 .widget-button {
-  /* Styles for widget buttons */
   width: 100px;
   height: 100px;
   display: flex;
@@ -167,12 +167,12 @@ header {
   transition: border-color 0.3s, background-color 0.3s;
 }
 
+/* Effetto hover per i pulsanti dei widget */
 .widget-button:hover {
-  /* Hover effect for widget buttons */
   background-color: #3a3a3a;
 }
 
+/* Stile per i pulsanti selezionati dei widget */
 .widget-button.selected {
-  /* Styles for selected widget buttons */
   border-color: #FFD700;
 }
