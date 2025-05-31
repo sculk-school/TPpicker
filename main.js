@@ -37,9 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
           widgetDiv.className = 'widget';
           widgetDiv.innerHTML = `
             <h3 class="widget-title" title="${widget.description}">${widget.title}</h3>
-            <div class="widget-preview">
-              <img src="${widget.preview || 'assets/placeholder.png'}" alt="Preview" class="preview-image">
-            </div>
             <div class="widget-options">
               ${
                 widget.type === 'color-picker'
