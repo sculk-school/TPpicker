@@ -1,6 +1,5 @@
-/* Stile generale per il corpo della pagina */
 body {
-  /* Colore di sfondo e impostazioni generali del font */
+  /* stile generale del corpo della pagina */
   background-color: #121212;
   color: #e0e0e0;
   font-family: Arial, sans-serif;
@@ -13,16 +12,16 @@ body {
   background-size: 15px 15px;
 }
 
-/* Stile per l'intestazione */
 header {
+  /* stile per l'intestazione */
   background-color: #1f1f1f;
   color: #e0e0e0;
   padding: 1rem;
   text-align: center;
 }
 
-/* Stile per la sidebar */
 .sidebar {
+  /* stile per la barra laterale */
   background-color: #1a1a1a;
   color: #e0e0e0;
   width: 200px;
@@ -35,13 +34,13 @@ header {
   transition: transform 0.3s ease;
 }
 
-/* Stile per la sidebar nascosta */
 .sidebar.hidden {
+  /* stile per la barra laterale nascosta */
   transform: translateX(-220px);
 }
 
-/* Stile per i pulsanti generali */
 .sidebar-toggle, .export-button, .github-button {
+  /* stile per i pulsanti principali */
   position: fixed;
   top: 10px;
   background-color: #333;
@@ -53,28 +52,28 @@ header {
   z-index: 1000;
 }
 
-/* Effetto hover per i pulsanti */
 .sidebar-toggle:hover, .export-button:hover, .github-button:hover {
+  /* stile per i pulsanti al passaggio del mouse */
   background-color: #444;
 }
 
-/* Posizionamento del pulsante per la sidebar */
 .sidebar-toggle {
+  /* stile specifico per il pulsante toggle */
   left: 10px;
 }
 
-/* Posizionamento del pulsante di esportazione */
 .export-button {
+  /* stile specifico per il pulsante di esportazione */
   left: 60px;
 }
 
-/* Posizionamento del pulsante GitHub */
 .github-button {
+  /* stile specifico per il pulsante github */
   left: 110px;
 }
 
-/* Stile per i pulsanti nella sidebar */
 .sidebar button {
+  /* stile per i pulsanti della barra laterale */
   width: 100%;
   padding: 4px 0;
   margin: 10px 0;
@@ -90,18 +89,18 @@ header {
   box-sizing: border-box;
 }
 
-/* Effetto hover per i pulsanti della sidebar */
 .sidebar button:hover {
+  /* stile per i pulsanti della barra laterale al passaggio del mouse */
   background-color: #3a3a3a;
 }
 
-/* Stile per i pulsanti selezionati */
 .sidebar button.selected {
+  /* stile per i pulsanti selezionati */
   border: 2px solid #FFD700;
 }
 
-/* Stile per il contenitore della griglia */
 .grid-container {
+  /* stile per il contenitore della griglia */
   margin-left: 240px;
   padding: 1rem;
   display: grid;
@@ -109,8 +108,8 @@ header {
   gap: 50px;
 }
 
-/* Stile per i widget */
 .widget {
+  /* stile per i widget */
   background: #1a1a1a;
   border-radius: 8px;
   padding: 1rem;
@@ -121,14 +120,14 @@ header {
   height: fit-content;
 }
 
-/* Stile per i titoli dei widget */
 .widget-title {
+  /* stile per il titolo dei widget */
   position: relative;
   cursor: help;
 }
 
-/* Tooltip per i titoli dei widget */
 .widget-title:hover::after {
+  /* stile per l'effetto hover sul titolo dei widget */
   content: attr(title);
   position: absolute;
   top: 100%;
@@ -136,6 +135,9 @@ header {
   transform: translateX(-50%);
   background-color: #333;
   color: #fff;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  border-color: #1a1a1a;
   padding: 5px 10px;
   border-radius: 4px;
   white-space: nowrap;
@@ -143,8 +145,8 @@ header {
   z-index: 10;
 }
 
-/* Stile per le opzioni dei widget */
 .widget-options {
+  /* stile per le opzioni dei widget */
   display: grid;
   grid-template-columns: repeat(2, 100px);
   gap: 10px;
@@ -152,8 +154,8 @@ header {
   margin-top: 10px;
 }
 
-/* Stile per i pulsanti dei widget */
 .widget-button {
+  /* stile per i pulsanti dei widget */
   width: 100px;
   height: 100px;
   display: flex;
@@ -167,12 +169,12 @@ header {
   transition: border-color 0.3s, background-color 0.3s;
 }
 
-/* Effetto hover per i pulsanti dei widget */
 .widget-button:hover {
+  /* stile per i pulsanti dei widget al passaggio del mouse */
   background-color: #3a3a3a;
 }
 
-/* Stile per i pulsanti selezionati dei widget */
 .widget-button.selected {
+  /* stile per i pulsanti dei widget selezionati */
   border-color: #FFD700;
 }

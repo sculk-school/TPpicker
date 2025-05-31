@@ -5,15 +5,14 @@
       "widgets": [
         {
           "title": "Stone",
-          "description": "Choose a texture for stone.",
-          "type": "multi-selection",
-          "options": ["Option 1", "Option 2", "Option 3"]
+          "description": "scegli una texture per la pietra",
+          "options": ["opzione 1", "opzione 2", "opzione 3"]
         },
         {
           "title": "Wood",
-          "description": "Choose a texture for wood.",
+          "description": "scegli una texture per il legno",
           "type": "multi-selection",
-          "options": ["Option 1", "Option 2"]
+          "options": ["opzione 1", "opzione 2"]
         }
       ]
     },
@@ -22,7 +21,7 @@
       "widgets": [
         {
           "title": "Background Color",
-          "description": "Pick a background color.",
+          "description": "scegli un colore di sfondo",
           "type": "color-picker"
         }
       ]
