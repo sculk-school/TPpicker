@@ -8,20 +8,23 @@ body {
   display: flex;
   flex-direction: column;
   height: auto;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
-  background-size: 15px 15px;
+  background-image:
+    radial-gradient(circle at 20% 25%, rgba(26,40,48,0.8) 4%, transparent 5%),
+    radial-gradient(circle at 70% 80%, rgba(28,44,56,0.7) 3%, transparent 4%),
+    radial-gradient(circle at 50% 50%, rgba(22,36,48,0.6) 2%, transparent 3%);
+  background-size: 20px 20px;
 }
 
 header {
   /* stile per l'intestazione */
-  background-color: #0b0f14;
+  background-color: #04060700;
   color: #e0e0e0;
   padding: 16px;
   text-align: center;
 }
 
 .sidebar {
-  /*stileperlabarralaterale*/background-color: #07090e;
+  /*stileperlabarralaterale*/background-color: #121a2062;
   color: #e0e0e0;
   width: 200px;
   padding: 20px;
@@ -42,7 +45,7 @@ header {
   width: 100%;
   padding: 4px 0;
   margin: 10px 0;
-  background-color: #090c11;
+  background-color: #1a232b;
   color: #e0e0e0;
   border: 2px solid transparent;
   border-radius: 8px;
@@ -56,7 +59,7 @@ header {
 
 .sidebar button:hover {
   /* stile per i pulsanti della barra laterale al passaggio del mouse */
-  background-color: #07090e;
+  background-color: #22303a;
 }
 
 .sidebar button.selected {
@@ -75,7 +78,7 @@ header {
 
 .widget {
   /* stile per i widget */
-  background: #07090e;
+  background: #121a2062;
   border-radius: 8px;
   padding: 16px;
   text-align: center;
@@ -98,11 +101,11 @@ header {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #0b0f14;
+  background-color: #22303a;
   color: #fff;
   border: 2px solid transparent;
   border-radius: 8px;
-  border-color: #0a0e12;
+  border-color: #1a232b;
   padding: 5px 10px;
   border-radius: 4px;
   white-space: nowrap;
@@ -126,7 +129,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #090c11;
+  background-color: #1a232b;
   color: #e0e0e0;
   border: 2px solid transparent;
   border-radius: 8px;
@@ -136,7 +139,7 @@ header {
 
 .widget-button:hover {
   /* stile per i pulsanti dei widget al passaggio del mouse */
-  background-color: #07090e;
+  background-color: #22303a;
 }
 
 .widget-button.selected {
@@ -147,11 +150,15 @@ header {
 .widget-color-picker {
   width: 100px;
   height: 100px;
-  background-color: #090c11;
+  background-color: #1a232b;
   border: 2px solid transparent;
   border-radius: 8px;
   cursor: pointer;
   padding: 0;
+}
+
+.widget-color-picker:hover {
+  background-color: #22303a;
 }
 
 .widget-color-picker:focus {
@@ -162,7 +169,7 @@ header {
 .widget-alpha-picker {
   width: 100px;
   height: 100px;
-  background-color: #090c11;
+  background-color: #1a232b;
   border: 2px solid transparent;
   border-radius: 8px;
   cursor: pointer;
@@ -170,6 +177,10 @@ header {
   font-family: inherit;
   color: inherit;
   text-align: center;
+}
+
+.widget-alpha-picker:hover {
+  background-color: #22303a;
 }
 
 .widget-alpha-picker:focus {
