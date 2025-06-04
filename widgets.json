@@ -16,12 +16,28 @@
         }
       ]
     },
+{
+      "name": "Weapons",
+      "widgets": [
+        {
+          "title": "Sword",
+          "description": "scegli una texture per la spada",
+          "options": ["opzione 1", "opzione 2", "opzione 3"]
+        },
+        {
+          "title": "Bow",
+          "description": "scegli una texture per l'arco",
+          "type": "multi-selection",
+          "options": ["opzione 1", "opzione 2"]
+        }
+      ]
+    },
     {
       "name": "Colors",
       "widgets": [
         {
-          "title": "Background Color",
-          "description": "scegli un colore di sfondo",
+          "title": "General Color",
+          "description": "choose a general color",
           "type": "color-picker"
         }
       ]

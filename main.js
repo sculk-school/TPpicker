@@ -39,7 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="widget-options">
               ${
                 widget.type === 'color-picker'
-                  ? '<input type="color" class="widget-color-picker" title="Pick a color">'
+                  ? '<input type="color" class="widget-color-picker" value="#20e5f2">'
+                    + '<input type="number" class="widget-alpha-picker" min="0" max="1" step="0.01" value="1">'
                   : widget.options.map(option => `<button class="widget-button">${option}</button>`).join('')
               }
             </div>
@@ -53,6 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
               button.classList.add('selected');
             });
           });
+
+          const alphaInput = widgetDiv.querySelector('.widget-alpha-picker');
+          if (alphaInput) {
+            alphaInput.addEventListener('change', function() {
+              const val = parseFloat(this.value);
+              if (isNaN(val) || val < parseFloat(this.min) || val > parseFloat(this.max)) {
+                this.value = this.defaultValue;
+              }
+            });
+          }
         });
       }
 
