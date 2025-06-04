@@ -24,7 +24,7 @@ header {
 }
 
 .sidebar {
-  /*stileperlabarralaterale*/background-color: #121a2062;
+  /*stileperlabarralaterale*/background-color: #0c101362;
   color: #e0e0e0;
   width: 200px;
   padding: 20px;
@@ -78,7 +78,7 @@ header {
 
 .widget {
   /* stile per i widget */
-  background: #121a2062;
+  background: #0c101362;
   border-radius: 8px;
   padding: 16px;
   text-align: center;
