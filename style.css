@@ -21,57 +21,20 @@ header {
 }
 
 .sidebar {
-  /* stile per la barra laterale */
-  background-color: #090c11;
+  /*stileperlabarralaterale*/background-color: #07090e;
   color: #e0e0e0;
   width: 200px;
-  padding: 24px;
+  padding: 20px;
   position: fixed;
   height: calc(100%);
   z-index: 1000;
   overflow-y: auto;
   transition: transform 0.3s ease;
-}
-
-.sidebar.hidden {
- transform: translateX(-240px);
- -webkit-transform: translateX(-240px);
- -moz-transform: translateX(-240px);
- -ms-transform: translateX(-240px);
- -o-transform: translateX(-240px);
-}
-
-.sidebar-toggle, .export-button, .github-button {
-  /* stile per i pulsanti principali */
-  position: fixed;
-  top: 10px;
-  background-color: #090c11;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.sidebar-toggle:hover, .export-button:hover, .github-button:hover {
-  /* stile per i pulsanti al passaggio del mouse */
-  background-color: #07090e;
-}
-
-.sidebar-toggle {
-  /* stile specifico per il pulsante toggle */
-  left: 10px;
-}
-
-.export-button {
-  /* stile specifico per il pulsante di esportazione */
-  left: 60px;
-}
-
-.github-button {
-  /* stile specifico per il pulsante github */
-  left: 110px;
+  transform: translateX(-40px);
+  -webkit-transform: translateX(-40px);
+  -moz-transform: translateX(-40px);
+  -ms-transform: translateX(-40px);
+  -o-transform: translateX(-40px);
 }
 
 .sidebar button {

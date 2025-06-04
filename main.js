@@ -4,17 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const gridContainer = document.querySelector('.grid-container');
   const sidebar = document.querySelector('.sidebar');
 
-  // crea un pulsante per mostrare/nascondere la barra laterale
-  const toggleButton = document.createElement('button');
-  toggleButton.textContent = '=';
-  toggleButton.className = 'sidebar-toggle';
-  document.body.appendChild(toggleButton);
-
-  // aggiunge un evento per alternare la visibilità della barra laterale
-  toggleButton.addEventListener('click', () => {
-    sidebar.classList.toggle('hidden');
-  });
-
   // carica i dati dei widget dal file json
   fetch('widgets.json')
     .then(response => response.json())
