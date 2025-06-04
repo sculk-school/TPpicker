@@ -66,4 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     })
     .catch(error => console.error('errore nel caricamento dei widget:', error));
+
+  const gButton = document.getElementById('static-button-g');
+  gButton.addEventListener('click', () => {
+    window.location.href = 'https://github.com/sculk3/TPpicker';
+  });
 });
